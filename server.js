@@ -42,3 +42,7 @@ const PORT = 3000;
 server.listen(PORT, () => {
     console.log(`Server is running! Go to http://localhost:${PORT}`);
 });
+// This tells the server to send index.html when someone visits the main page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
